@@ -6,13 +6,16 @@ let charset = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 
 export default function App() {
     const [size, setSize] = useState(10);
+    const [passwordValue, setPasswordValue] = useState("");
 
     function generatePassword() {
         let password = "";
+        
         for(let i = 0; i < size; i++) {
             password += charset.charAt(Math.floor(Math.random() * charset.length));
         }
-        console.log(password);
+
+        setPasswordValue(password);
     }
 
     return (
